@@ -6,6 +6,10 @@ import 'package:movie2/bloc/movie_bloc.dart';
 Style style = new Style();
 
 class HomePage extends StatefulWidget {
+  void initState() {
+    mvcBlk.ambildata();
+  }
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -144,7 +148,7 @@ class _ListMoviesState extends State<ListMovies> {
       width: widget.size.width,
       height: 180,
       child: StreamBuilder<List<Movie_model>>(
-          stream: MvcBlk.tampungdata,
+          stream: mvcBlk.tampungdata,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return Text(snapshot.error);

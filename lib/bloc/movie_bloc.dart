@@ -12,10 +12,12 @@ class MovieBloc extends Services {
   void ambildata() async {
     try {
       List<Movie_model> listMovie = await Services.getDataMovie();
+      print(listMovie);
+      _MovieController.sink.add(listMovie);
     } catch (e) {
-      _MovieController.sink.add(e);
+      _MovieController.sink.addError(e);
     }
   }
 }
 
-final MvcBlk = MovieBloc();
+final mvcBlk = MovieBloc();
