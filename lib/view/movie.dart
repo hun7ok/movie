@@ -6,15 +6,15 @@ import 'package:movie2/bloc/movie_bloc.dart';
 Style style = new Style();
 
 class HomePage extends StatefulWidget {
-  void initState() {
-    mvcBlk.ambildata();
-  }
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  void initState() {
+    mvcBlk.ambildata();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -190,7 +190,7 @@ class _ListMoviesState extends State<ListMovies> {
                         Positioned(
                             bottom: 10,
                             left: 10,
-                            child: Text('Filme filme filme',
+                            child: Text(snapshot.data[index].judulfilm,
                                 style: TextStyle(
                                     color: style.primary,
                                     fontSize: 16,

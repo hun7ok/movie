@@ -8,11 +8,11 @@ class Services {
   static Future<List<Movie_model>> getDataMovie() async {
     try {
       final response = await http.get(url);
-      print(response);
+      // print(response);
 
       if (response.statusCode == 200) {
         List<Movie_model> list = parseMovie(response.body);
-        print(list);
+        //  print(list);
         return list;
       } else {
         throw Exception("Error");
